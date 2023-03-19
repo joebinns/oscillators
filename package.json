@@ -20,9 +20,9 @@
     },
     "samples": [
         {
-            "displayName": "Prefabs",
-            "description": "Contains sample prefabs for examples of usage.",
-            "path": "Samples~/SamplesPrefabs"
+            "displayName": "Examples",
+            "description": "Contains sample prefabs as examples of usage.",
+            "path": "Samples~/SamplesExamples"
         }
     ]
 }
