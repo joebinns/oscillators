@@ -4,6 +4,7 @@
     "displayName": "Oscillators",
     "description": "The Oscillators package provides C# scripts for making rigidbodies in Unity behave as linear or torsional oscillators.",
     "licensesUrl": "https://github.com/joebinns/oscillators/blob/main/LICENSE",
+    "changelogUrl": "https://github.com/joebinns/oscillators/commits/main",
     "documentationUrl": "https://github.com/joebinns/oscillators",
     "keywords": [
         "oscillators",
@@ -16,5 +17,12 @@
         "name": "Joe Binns",
         "email": "contact@joebinns.com",
         "url": "https://www.joebinns.com"
-    }
+    },
+    "samples": [
+        {
+            "displayName": "Prefabs",
+            "description": "Contains sample prefabs for examples of usage.",
+            "path": "Samples~/SamplesPrefabs"
+        }
+    ]
 }
