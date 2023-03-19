@@ -1,0 +1,20 @@
+{
+    "name": "com.joebinns.oscillators",
+    "version": "1.0.0",
+    "displayName": "Oscillators",
+    "description": "The Oscillators package provides C# scripts for making rigidbodies in Unity behave as linear or torsional oscillators.",
+    "licensesUrl": "https://github.com/joebinns/oscillators/blob/main/LICENSE",
+    "documentationUrl": "https://github.com/joebinns/oscillators",
+    "keywords": [
+        "oscillators",
+        "oscillator",
+        "spring",
+        "physics",
+        "rigidbody"
+    ],
+    "author": {
+        "name": "Joe Binns",
+        "email": "contact@joebinns.com",
+        "url": "https://www.joebinns.com"
+    }
+}
