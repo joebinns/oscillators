@@ -11,9 +11,9 @@ namespace Oscillators
     {
         [Tooltip("The local position about which oscillations are centered.")]
         [SerializeField] private Vector3 _localEquilibriumPosition = Vector3.zero;
-        [Tooltip("The axes over which the oscillator applies force. Within range [0, 1].")]
-        [SerializeField] private Vector3 _forceScale = Vector3.one;
-        [Tooltip("The greater the stiffness constant, the lesser the amplitude of oscillations.")]
+		[Tooltip("The local axes over which the oscillator applies force. Within range [0, 1].")]
+		[SerializeField] private Vector3 _localForceScale = Vector3.one;
+		[Tooltip("The greater the stiffness constant, the lesser the amplitude of oscillations.")]
         [SerializeField] private float _stiffness = 50f;
         [Tooltip("The greater the damper constant, the faster that oscillations will disappear.")]
         [SerializeField] private float _damper = 5f;
@@ -87,14 +87,18 @@ namespace Oscillators
         /// </summary>
         /// <param name="force">The force to be applied.</param>
         public void ApplyForce(Vector3 force) {
-            if (_rb != null)
+            var localForce = transform.InverseTransformVector(force);
+            var scaledLocalForce = Vector3.Scale(localForce, _localForceScale);
+            var scaledForce = transform.TransformVector(force);
+
+			if (_rb != null)
             {
-                _rb.AddForce(Vector3.Scale(force, _forceScale));
+                _rb.AddForce(scaledForce);
             }
             else
             {
-                Vector3 displacement = CalculateDisplacementDueToForce(force);
-                transform.localPosition += Vector3.Scale(displacement, _forceScale);
+                var displacement = CalculateDisplacementDueToForce(scaledForce);
+                transform.localPosition += displacement;
             }
         }
 
