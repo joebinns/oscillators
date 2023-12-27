@@ -89,7 +89,7 @@ namespace Oscillators
         public void ApplyForce(Vector3 force) {
             var localForce = transform.InverseTransformVector(force);
             var scaledLocalForce = Vector3.Scale(localForce, _localForceScale);
-            var scaledForce = transform.TransformVector(force);
+            var scaledForce = transform.TransformVector(scaledLocalForce);
 
 			if (_rb != null)
             {
