@@ -6,7 +6,6 @@ namespace Oscillators
     /// <summary>
     /// A dampened oscillator using the objects transform local position.
     /// </summary>
-    [DisallowMultipleComponent]
     public class Oscillator : MonoBehaviour
     {
         [Tooltip("The local position about which oscillations are centered.")]

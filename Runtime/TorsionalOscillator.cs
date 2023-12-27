@@ -9,7 +9,6 @@ namespace Oscillators
     /// due to difficulty working with quaternions whilst calculating angular velocity, torque and angular
     /// displacement to apply.
     /// </summary>
-    [DisallowMultipleComponent]
     [RequireComponent(typeof(Rigidbody))]
     public class TorsionalOscillator : MonoBehaviour
     {
