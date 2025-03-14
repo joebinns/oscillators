@@ -44,7 +44,7 @@ namespace Oscillators
 			ApplyForce(restoringForce, Time.fixedDeltaTime);
 		}
 
-		private Vector3 CalculateRestoringForce(var deltaTime)
+		private Vector3 CalculateRestoringForce(float deltaTime)
 		{
 			var parent = transform.parent;
 			var position = transform.localPosition;
