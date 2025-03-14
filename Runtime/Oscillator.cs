@@ -28,9 +28,14 @@ namespace Oscillators
 			_rigidbody = GetComponent<Rigidbody>();
 		}
 
+		public void SetLocalEquilibriumPosition(Vector3 position)
+		{
+			_localEquilibriumPosition = position;
+		}
+
 		private void Update()
 		{
-			if (_rigidbody != null) continue;
+			if (_rigidbody != null) return;
 
 			var restoringForce = CalculateRestoringForce(Time.deltaTime);
 			ApplyForce(restoringForce, Time.deltaTime);
@@ -38,7 +43,7 @@ namespace Oscillators
 
 		private void FixedUpdate()
 		{
-			if (_rigidbody == null) continue;
+			if (_rigidbody == null) return;
 
 			var restoringForce = CalculateRestoringForce(Time.fixedDeltaTime);
 			ApplyForce(restoringForce, Time.fixedDeltaTime);
@@ -102,20 +107,14 @@ namespace Oscillators
 			if (!isActiveAndEnabled) return;
 
 			var bob = transform.localPosition;
-			var equilibrium = LocalEquilibriumPosition;
-			var minEquilibrium = _minLocalEquilibriumPosition;
-			var maxEquilibrium = _maxLocalEquilibriumPosition;
+			var equilibrium = _localEquilibriumPosition;
 			var parent = transform.parent;
 			if (parent != null)
 			{
 				bob = parent.TransformVector(bob);
 				equilibrium = parent.TransformVector(equilibrium);
-				minEquilibrium = parent.TransformVector(minEquilibrium);
-				maxEquilibrium = parent.TransformVector(maxEquilibrium);
 				bob += parent.position;
 				equilibrium += parent.position;
-				minEquilibrium += parent.position;
-				maxEquilibrium += parent.position;
 			}
 
 			// Draw (wire) equilibrium position
