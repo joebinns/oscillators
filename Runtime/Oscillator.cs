@@ -121,7 +121,7 @@ namespace Oscillators
 			// Draw (wire) equilibrium position
 			Color color = Color.green;
 			Gizmos.color = color;
-			Gizmos.DrawWireSphere(equilibrium, 0.1f)
+			Gizmos.DrawWireSphere(equilibrium, 0.1f);
 
 			// Draw (solid) bob position
 			// Color goes from green (0,1,0,0) to yellow (1,1,0,0) to red (1,0,0,0).
